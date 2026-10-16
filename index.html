@@ -1,0 +1,1298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Formation of Fossil Fuels</title>
+<meta name="description" content="IGCSE Environmental Management 0680: a step-by-step walk-through of how coal, oil and natural gas formed, with check questions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: a guided reading page. Section chips across the top; each section is the notes (with a diagram) followed by a check card that must be passed before moving on. */
+:root {
+  --bg: #edf2f1; --surface: #ffffff; --sunk: #f5f8f7; --ink: #14262b; --muted: #56696e; --line: #d2dedc;
+  --accent: #1c6676; --accent-ink: #ffffff; --accent-soft: #dcedf0;
+  --good: #1f7449; --good-bg: #e2f2e8; --bad: #b1372e; --bad-bg: #fbe8e5; --hint: #8d600c; --hint-bg: #fbf0d9;
+  --enz: #c9dfe4; --sky: #e3f0f6; --water: #b7d7e6; --plant: #4d8a46; --trunk: #7a5a3a; --peat: #9a6a43; --lignite: #6f4c30; --bitum: #3d3a37; --coal: #1f1f1f; --sand: #ead59f; --mud: #b3a58e; --shale: #8a949a; --rock: #d4cbbb; --src: #6d7479; --oil: #3f3121; --oilband: #d9a55a; --gas: #ef9a9a; --plk: #2f8f5b; --enz-line: #1c6676; --sub: #5aa469; --sub-end: #2c6a3a; --inh: #d9534f; --comp: #c0392b; --nonc: #2b5fb8;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e191c; --surface: #162428; --sunk: #12201f; --ink: #e2eceb; --muted: #9bb0b2; --line: #2a3e42;
+    --accent: #63b8c8; --accent-ink: #08181b; --accent-soft: #1b3940;
+    --good: #72d09d; --good-bg: #163226; --bad: #f08d81; --bad-bg: #3b201c; --hint: #e6b85e; --hint-bg: #352a13;
+    --enz: #23474f; --sky: #1a2a31; --water: #1f4a5c; --plant: #6fae66; --trunk: #a07a52; --peat: #9c6c47; --lignite: #7d583a; --bitum: #55514d; --coal: #0b0b0b; --sand: #8e7a48; --mud: #6a6052; --shale: #56616a; --rock: #3e3a34; --src: #39424a; --oil: #c58a3c; --oilband: #9a6e33; --gas: #b85c5c; --plk: #7fd3a3; --enz-line: #63b8c8; --sub: #6cc07c; --sub-end: #b5e8bf; --inh: #f07b72; --comp: #f07b72; --nonc: #7fa8f0;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.6; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+.wrap { max-width: 860px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 20px 56px; display: flex; flex-direction: column; gap: 16px; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(26px, 4vw, 34px); letter-spacing: -.01em; }
+h2 { font-size: clamp(22px, 3vw, 27px); }
+h4 { font-size: 17px; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+@media (max-width: 520px) { .card { padding: 15px; } body { font-size: 16px; } }
+
+/* Section chips */
+.chips { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin; }
+.chips button { flex: 0 0 auto; font: inherit; font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px 5px 6px; cursor: pointer; display: flex; gap: 6px; align-items: center; white-space: nowrap; }
+.chips button .n { font-family: var(--font-mono); font-size: 11px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--sunk); border: 1px solid var(--line); }
+.chips button.done .n { background: var(--good); color: var(--surface); border-color: var(--good); }
+.chips button[aria-current="step"] { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+.chips button[aria-current="step"] .n { background: var(--accent-ink); color: var(--accent); border-color: var(--accent-ink); }
+.chips button:disabled { opacity: .5; cursor: not-allowed; }
+button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Notes */
+.notes { display: flex; flex-direction: column; gap: 12px; max-width: 70ch; }
+.notes b { font-weight: 700; }
+ul.bonds { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 2px; }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (max-width: 620px) { .two { grid-template-columns: minmax(0, 1fr); } }
+.tile { background: var(--sunk); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+.tile.comp h4 { color: var(--comp); } .tile.nonc h4 { color: var(--nonc); }
+.note { font-size: 14px; color: var(--muted); }
+
+/* Figures */
+.fig { margin: 0; display: flex; flex-direction: column; gap: 8px; align-items: stretch; max-width: 100%; }
+.fig svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+
+.fig figcaption { font-size: 14px; color: var(--muted); text-align: center; }
+.enz { fill: var(--enz); stroke: var(--enz-line); stroke-width: 2; }
+.sub { fill: var(--sub); }
+.sub-end { fill: var(--sub-end); }
+.inh { fill: var(--inh); }
+.figbg { fill: var(--surface); }
+.panel { fill: var(--sunk); stroke: var(--line); }
+.lbl { fill: var(--ink); font-family: var(--font-body); font-size: 14px; }
+.small-t { font-size: 12px; }
+.inh-t { fill: var(--inh); font-weight: 700; }
+.cap { fill: var(--muted); font-family: var(--font-body); font-size: 14px; }
+.lead { stroke: var(--muted); stroke-width: 1; }
+.bad-mark line { stroke: var(--bad); stroke-width: 3.5; stroke-linecap: round; }
+.good-mark { fill: none; stroke: var(--good); stroke-width: 3.5; stroke-linecap: round; stroke-linejoin: round; }
+.arrow { stroke: var(--muted); stroke-width: 2; }
+.arrow-head { fill: var(--muted); }
+.cone { fill: var(--good); opacity: .35; stroke: var(--good); stroke-width: 1; }
+.axis { stroke: var(--ink); stroke-width: 1.6; }
+.grid { stroke: var(--line); stroke-width: 1; }
+.dash { stroke: var(--muted); stroke-width: 1.4; stroke-dasharray: 6 5; }
+.guide { fill: none; stroke-width: 1.3; stroke-dasharray: 4 4; }
+.num { fill: var(--muted); font-family: var(--font-mono); font-size: 12px; }
+.axis-t { fill: var(--ink); font-family: var(--font-body); font-size: 14px; }
+.curve .line { fill: none; stroke-width: 3; }
+.curve-t { font-weight: 700; font-size: 14px; }
+.c-normal .line { stroke: var(--ink); } .c-normal .guide { stroke: var(--ink); } .c-normal .curve-t { fill: var(--ink); }
+.c-comp .line { stroke: var(--comp); } .c-comp .guide { stroke: var(--comp); } .c-comp .curve-t { fill: var(--comp); }
+.c-nonc .line { stroke: var(--nonc); } .c-nonc .guide { stroke: var(--nonc); } .c-nonc .curve-t { fill: var(--nonc); }
+#inhib-fig .curve.off { display: none; }
+.toggles { display: flex; gap: 8px; flex-wrap: wrap; }
+.tog { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; }
+.tog.on { border-color: var(--accent); background: var(--accent-soft); font-weight: 700; }
+.tog { display: inline-flex; align-items: center; gap: 8px; }
+.tog .sw { width: 18px; height: 4px; border-radius: 2px; display: inline-block; opacity: .35; }
+.tog.on .sw { opacity: 1; }
+.sw-normal { background: var(--ink); } .sw-comp { background: var(--comp); } .sw-nonc { background: var(--nonc); }
+.tog:disabled { cursor: default; }
+.sat-caps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; font-size: 13px; color: var(--muted); }
+.sat-caps b { color: var(--ink); }
+@media (max-width: 560px) { .sat-caps { grid-template-columns: minmax(0, 1fr); } }
+
+
+.sub { color: var(--muted); margin-top: 6px; font-size: 15px; }
+ul.pts, ol.steps { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+.examtip { background: var(--hint-bg); border-radius: 8px; padding: 10px 14px; font-size: 15px; }
+.examtip b { color: var(--hint); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; justify-content: center; font-size: 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sq { width: 16px; height: 12px; border-radius: 2px; display: inline-block; border: 1px solid var(--line); }
+.sq.peat { background: var(--peat); } .sq.sand { background: var(--sand); } .sq.mud { background: var(--mud); } .sq.coal { background: var(--coal); }
+.sq.plk { background: var(--plk); } .sq.shale { background: var(--shale); } .sq.oil { background: var(--oil); }
+.sky { fill: var(--sky); } .water { fill: var(--water); } .peat { fill: var(--peat); } .lignite { fill: var(--lignite); } .bitum { fill: var(--bitum); } .coal { fill: var(--coal); }
+.sand { fill: var(--sand); } .mud { fill: var(--mud); } .shale { fill: var(--shale); } .rock { fill: var(--rock); } .src { fill: var(--src); } .oil { fill: var(--oil); } .gas { fill: var(--gas); } .plk { fill: var(--plk); }
+.trunk { fill: var(--trunk); } .frond { fill: none; stroke: var(--plant); stroke-width: 5; stroke-linecap: round; }
+.frame { fill: none; stroke: var(--muted); stroke-width: 1.2; }
+.track { fill: var(--sunk); stroke: var(--line); }
+.dot { fill: var(--muted); } .dotfill { fill: var(--ink); opacity: .35; }
+.lbl.b, .cap.b, .num.b { font-weight: 700; } .num.b { fill: var(--ink); font-size: 13px; }
+.flow line, .flow path { fill: none; stroke: var(--muted); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.flow.big line, .flow.big path { stroke-width: 3; }
+.flow.mig line, .flow.mig path, .flowkey { stroke: var(--bad); stroke-width: 2.5; stroke-dasharray: 6 4; fill: none; }
+.flow.mig path { stroke-dasharray: none; }
+.band-cool { fill: var(--sunk); } .band-oil { fill: var(--oilband); opacity: .45; } .band-gas { fill: var(--gas); opacity: .45; }
+.ground { stroke: var(--ink); stroke-width: 2; } .rig { fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linejoin: round; } .well { stroke: var(--ink); stroke-width: 2.5; }
+.src3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 620px) { .src3 { grid-template-columns: minmax(0, 1fr); } }
+.src3 .tile { border-top: 4px solid var(--line); } .src3 .ff-coal { border-top-color: var(--bitum); } .src3 .ff-oil { border-top-color: var(--oil); } .src3 .ff-gas { border-top-color: var(--gas); }
+.st8 { font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.chain { display: flex; flex-wrap: wrap; gap: 6px; align-items: stretch; justify-content: center; }
+.chain > i { font-style: normal; align-self: center; color: var(--muted); font-size: 20px; font-weight: 700; }
+.chain > i::before { content: "→"; }
+.part { flex: 1 1 100px; min-width: 0; background: var(--sunk); border: 1px solid var(--line); border-radius: 8px; padding: 10px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; text-align: center; }
+.part.out { border-color: var(--accent); }
+@media (max-width: 700px) { .chain { flex-direction: column; } .chain .part { flex: none; } .chain > i::before { content: "↓"; } }
+.tblwrap { overflow-x: auto; }
+.rank { display: flex; flex-direction: column; gap: 10px; }
+.rk { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 52px; gap: 12px; align-items: center; }
+.rk-n { display: flex; flex-direction: column; font-size: 15px; } .rk-n span { font-size: 13px; color: var(--muted); }
+.rk-bar { height: 26px; background: var(--sunk); border: 1px solid var(--line); border-radius: 5px; overflow: hidden; } .rk-bar i { display: block; height: 100%; }
+.rk-v { font-family: var(--font-mono); font-size: 14px; text-align: right; }
+@media (max-width: 560px) { .rk { grid-template-columns: minmax(0, 1fr) 52px; gap: 4px 10px; } .rk-n { grid-column: 1 / -1; } }
+.rk-note { font-size: 13px; color: var(--muted); text-align: center; margin: 0; }
+.bg-peat { background: var(--peat); } .bg-lignite { background: var(--lignite); } .bg-bitum { background: var(--bitum); } .bg-coal { background: var(--coal); }
+.mk { fill: var(--surface); stroke: var(--ink); stroke-width: 2; } .fig svg .mkn { fill: var(--ink); font-family: var(--font-mono); font-size: 16px; font-weight: 700; }
+ol.key { margin: 0 auto; padding-left: 26px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 20px; font-size: 14px; max-width: 640px; }
+@media (max-width: 560px) { ol.key { grid-template-columns: minmax(0, 1fr); } }
+ol.key li.nk { list-style: none; margin-left: -20px; display: flex; align-items: center; gap: 8px; color: var(--muted); }
+.mig { width: 26px; border-top: 2.5px dashed var(--bad); display: inline-block; }
+table.st { border-collapse: collapse; width: 100%; font-size: 15px; color: var(--ink); }
+table.st th, table.st td { padding: 7px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+table.st thead th { font-size: 13px; color: var(--muted); }
+table.st tbody th { font-size: 14px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+/* Check card */
+.check { border-top: 4px solid var(--accent); }
+.qhead { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.stage { font-family: var(--font-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+.stage.backup { background: var(--hint-bg); color: var(--hint); }
+.stage.retry { background: var(--accent); color: var(--accent-ink); }
+.trail { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.trail b { font-weight: 500; padding: 2px 7px; border-radius: 5px; border: 1px solid var(--line); }
+.trail b.done { background: var(--sunk); border-color: transparent; text-decoration: line-through; }
+.trail b.on { border-color: var(--hint); color: var(--hint); }
+.stem { font-size: 18px; font-weight: 700; max-width: 66ch; }
+.opts { display: flex; flex-direction: column; gap: 8px; }
+.opt { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 12px; align-items: center; width: 100%; text-align: left; font: inherit; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 8px; padding: 10px 12px; cursor: pointer; }
+.opt:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.opt:disabled { cursor: default; }
+.opt .k { width: 30px; height: 30px; border-radius: 6px; display: grid; place-items: center; font-family: var(--font-mono); background: var(--sunk); border: 1px solid var(--line); }
+.opt .mark { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; }
+.opt.right { border-color: var(--good); background: var(--good-bg); } .opt.right .k { background: var(--good); color: var(--surface); border-color: var(--good); } .opt.right .mark { color: var(--good); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); } .opt.wrong .k { background: var(--bad); color: var(--surface); border-color: var(--bad); } .opt.wrong .mark { color: var(--bad); }
+.opt.dim { opacity: .55; }
+.log { display: flex; flex-direction: column; gap: 8px; }
+.msg { border-radius: 8px; padding: 11px 14px; }
+.msg h3 { font-family: var(--font-body); font-size: 15px; margin: 0 0 3px; }
+.msg.good { background: var(--good-bg); } .msg.good h3 { color: var(--good); }
+.msg.bad { background: var(--bad-bg); } .msg.bad h3 { color: var(--bad); }
+.msg.hint { background: var(--hint-bg); } .msg.hint h3 { color: var(--hint); }
+.btn { font: inherit; font-weight: 700; border: 0; border-radius: 8px; padding: 11px 20px; cursor: pointer; background: var(--accent); color: var(--accent-ink); }
+.btn.ghost { background: transparent; color: var(--accent); border: 1.5px solid var(--accent); }
+.btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.passed { display: flex; flex-direction: column; gap: 6px; }
+.passed div { display: flex; gap: 10px; align-items: baseline; font-size: 15px; }
+.tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: 5px; white-space: nowrap; }
+.tag.first { background: var(--good-bg); color: var(--good); } .tag.help { background: var(--hint-bg); color: var(--hint); } .tag.miss { background: var(--bad-bg); color: var(--bad); }
+.big { font-family: var(--font-display); font-weight: 700; font-size: clamp(40px, 7vw, 56px); line-height: 1; font-variant-numeric: tabular-nums; }
+.big small { font-size: .45em; color: var(--muted); font-weight: 500; }
+.secs { display: flex; flex-direction: column; gap: 8px; }
+.secs .row { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.linkbtn { font: inherit; font-size: 14px; color: var(--accent); background: none; border: 0; padding: 0; text-decoration: underline; cursor: pointer; }
+ol.keys { margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 6px; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+@media (max-width: 600px) {
+  .fig svg .lbl, .fig svg .cap, .fig svg .axis-t { font-size: 21px; }
+  .fig svg .curve-t { font-size: 20px; }
+  .fig svg .num { font-size: 17px; }
+  .fig svg .small-t { font-size: 18px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">IGCSE Environmental Management 0680 · Year 10 · 1.4.1</div>
+    <h1>How fossil fuels formed</h1>
+    <p class="sub">Coal, petroleum (oil) and natural gas (methane)</p>
+  </header>
+  <nav class="chips" id="chips" aria-label="Sections"></nav>
+  <main id="main" style="display:flex;flex-direction:column;gap:16px"></main>
+</div>
+<script>
+/* ===== Walk-through content: formation of fossil fuels (IGCSE Environmental Management 0680, Year 10) ===== */
+const SECTIONS = [
+ {
+  "id": "s1",
+  "title": "What is a fossil fuel?",
+  "teach": "\n<p>A <b>fossil fuel</b> is a fuel formed from the <b>remains of organisms</b> (plants, algae and tiny sea creatures) that lived <b>millions of years ago</b>.</p>\n<p>Those organisms got their energy from the Sun. Plants and algae trapped it by <b>photosynthesis</b> and stored it as chemical energy in the carbon compounds in their bodies. When we burn a fossil fuel today, we release that <b>stored energy</b>.</p>\n<p>There are three fossil fuels:</p>\n{{FIG:three}}\n<p>Fossil fuels are <b>non-renewable</b>. They take millions of years to form, so once they are used up they cannot be replaced on a human timescale.</p>",
+  "checks": [
+   {
+    "q": "What is a fossil fuel?",
+    "o": [
+     "A fuel formed from the remains of ancient organisms",
+     "A fuel formed when minerals melt deep under the ground",
+     "A fuel made by bacteria in rubbish dumps today",
+     "A fuel made from wood cut down in forests today"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Fossil fuels come from living things, not from melted minerals or rock.",
+     "2": "That's biogas. It forms in weeks, not millions of years, so it isn't a fossil fuel.",
+     "3": "Wood is a biofuel. Fossil fuels formed from organisms that lived millions of years ago."
+    },
+    "x": "Coal, oil and natural gas all formed from the remains of organisms that lived millions of years ago.",
+    "b": [
+     {
+      "q": "Where did the carbon in fossil fuels first come from?",
+      "o": [
+       "Living organisms",
+       "Lava from volcanoes",
+       "Sea salt",
+       "Metal ores"
+      ],
+      "a": 0,
+      "x": "The carbon was once part of living organisms, which is why they are called fossil fuels."
+     },
+     {
+      "q": "Roughly when did the organisms that formed fossil fuels live?",
+      "o": [
+       "Within the last 50 years",
+       "A few hundred years ago",
+       "A few thousand years ago",
+       "Millions of years ago"
+      ],
+      "a": 3,
+      "x": "Fossil fuels formed from organisms that lived millions of years ago.",
+      "fixed": true
+     }
+    ],
+    "id": "c1"
+   },
+   {
+    "q": "Why are fossil fuels described as non-renewable?",
+    "o": [
+     "They take millions of years to form",
+     "They can only be burned once",
+     "They are found in only a few countries",
+     "They release carbon dioxide when burned"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Every fuel can only be burned once, including renewable ones like wood. The point is how long it takes to replace.",
+     "2": "Where a fuel is found doesn't decide whether it is renewable.",
+     "3": "That's a problem with burning them, but it isn't why they are non-renewable."
+    },
+    "x": "They take millions of years to form but we use them up in a few hundred years, so they can't be replaced.",
+    "b": [
+     {
+      "q": "A resource is non-renewable if it…",
+      "o": [
+       "is used up faster than it can be replaced",
+       "can be replaced within a person's lifetime",
+       "gets all of its energy from the Sun",
+       "is found underground"
+      ],
+      "a": 0,
+      "x": "Non-renewable = it runs out because it can't be replaced as fast as we use it."
+     },
+     {
+      "q": "Which of these is a renewable energy resource?",
+      "o": [
+       "Wind",
+       "Coal",
+       "Crude oil",
+       "Natural gas"
+      ],
+      "a": 0,
+      "x": "Wind will not run out. Coal, oil and gas are fossil fuels and are non-renewable."
+     }
+    ],
+    "id": "c2"
+   }
+  ]
+ },
+ {
+  "id": "s2",
+  "title": "The recipe for a fossil fuel",
+  "teach": "\n<p>Normally, when an organism dies, <b>decomposers</b> (bacteria and fungi) break its body down. They use <b>oxygen</b>, and the carbon goes back into the air as carbon dioxide. Nothing is left to become a fuel.</p>\n<p>A fossil fuel only forms when this decay is stopped part of the way through. All three fossil fuels follow the same basic recipe:</p>\n<ol class=\"steps\">\n<li>Organisms die in <b>huge numbers</b>.</li>\n<li>Their remains are <b>buried quickly</b> by sediment (mud, sand or silt), often under water.</li>\n<li>There is <b>little or no oxygen</b> (anaerobic conditions), so decomposers cannot fully break the remains down. Decay is <b>incomplete</b>, so the carbon compounds are kept.</li>\n<li>More layers of sediment build up on top. The remains are buried <b>deeper</b>, where the <b>pressure</b> (from the weight of rock above) and the <b>temperature</b> (the Earth is hotter deeper down) are higher.</li>\n<li>Over <b>millions of years</b>, heat and pressure change the remains into coal, oil or gas.</li>\n</ol>\n{{FIG:recipe}}\n<p class=\"examtip\"><b>Key words examiners look for:</b> buried by sediment · lack of oxygen / anaerobic · incomplete decay · heat and pressure · millions of years.</p>",
+  "checks": [
+   {
+    "q": "Why did the buried remains not rot away completely?",
+    "o": [
+     "There was too little oxygen for the decomposers",
+     "Cold water froze the remains and kept them fresh",
+     "The organisms had no carbon compounds left to rot",
+     "Decomposers had not evolved when they were buried"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Most fossil fuels formed in warm swamps and seas. The remains were preserved because of the lack of oxygen.",
+     "2": "They were full of carbon compounds. That's where the fuel's carbon and energy come from.",
+     "3": "Bacteria are among the oldest living things on Earth. They were there, but without oxygen they couldn't finish the job."
+    },
+    "x": "Burial under sediment and water cut off the oxygen, so decomposers could only partly break the remains down.",
+    "b": [
+     {
+      "q": "What do decomposers normally do to dead organisms?",
+      "o": [
+       "Break them down so they rot",
+       "Turn them directly into coal",
+       "Keep them safe from rotting",
+       "Pump oxygen into the mud"
+      ],
+      "a": 0,
+      "x": "Decomposers (bacteria and fungi) break down dead material and release carbon dioxide."
+     },
+     {
+      "q": "What does 'anaerobic' mean?",
+      "o": [
+       "Without oxygen",
+       "Without water",
+       "Without sunlight",
+       "Without heat"
+      ],
+      "a": 0,
+      "x": "Anaerobic = without oxygen. Most decomposers need oxygen to work well."
+     }
+    ],
+    "id": "c3"
+   },
+   {
+    "q": "Which order is correct for the formation of a fossil fuel?",
+    "o": [
+     "Death → burial by sediment → heat and pressure → fuel",
+     "Death → full decay by decomposers → burial → fuel",
+     "Death → heat and pressure → burial by sediment → fuel",
+     "Burial by sediment → death → heat and pressure → fuel"
+    ],
+    "a": 0,
+    "w": {
+     "1": "If decomposers fully break the remains down, the carbon escapes as carbon dioxide and nothing is left to become fuel.",
+     "2": "Heat and pressure come from being buried deep, so burial must come first.",
+     "3": "The organisms die first, and then their remains are covered by sediment."
+    },
+    "x": "The organisms die, are buried by sediment (cutting off oxygen), then heat and pressure from deep burial change them over millions of years.",
+    "b": [
+     {
+      "q": "What causes the high pressure on buried remains?",
+      "o": [
+       "The weight of the layers above",
+       "Roots of trees pushing down into the soil",
+       "Gas made by decomposers",
+       "Waves pushing on the seabed"
+      ],
+      "a": 0,
+      "x": "Each new layer of sediment adds weight, squeezing the layers below."
+     },
+     {
+      "q": "Why does the temperature rise as remains are buried deeper?",
+      "o": [
+       "The Earth gets hotter with depth",
+       "The Sun heats the deeper rock",
+       "Decomposers give out lots of heat",
+       "Sea water above boils the rock"
+      ],
+      "a": 0,
+      "x": "The deeper you go into the Earth's crust, the hotter it gets."
+     }
+    ],
+    "id": "c4"
+   }
+  ]
+ },
+ {
+  "id": "s3",
+  "title": "Coal 1: swamp forests and peat",
+  "teach": "\n<p>Coal formed mainly from <b>plants</b>: giant tree ferns, horsetails and other trees that grew in huge <b>swamp forests</b> on warm, wet, low-lying land. Much of the world's coal formed in the <b>Carboniferous period</b>, about 360 to 300 million years ago. The name means \"coal-bearing\".</p>\n<p>When the plants died, they fell into the <b>waterlogged</b> swamp. The still water held very little oxygen, so decomposers could only <b>partly</b> break them down.</p>\n<p>Layer after layer of partly decayed plant material built up. This formed a soft, brown, spongy material called <b>peat</b>. Peat is the <b>first stage</b> of coal formation.</p>\n{{FIG:swamp}}\n<p class=\"examtip\"><b>Did you know?</b> Peat is still forming in bogs today. It would take burial and millions of years to turn it into coal.</p>",
+  "checks": [
+   {
+    "q": "Coal formed mainly from the remains of…",
+    "o": [
+     "plants in swamp forests",
+     "fish in warm, shallow seas",
+     "plankton in the open ocean",
+     "dinosaurs buried in deserts"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Sea creatures contributed to oil and gas, not coal. Coal is made of plant material.",
+     "2": "Plankton formed oil and natural gas. Coal formed from land plants.",
+     "3": "A popular myth! Coal is plant material, and most of it formed before the dinosaurs."
+    },
+    "x": "Coal formed from trees and other plants that grew in swamp forests and fell into the water when they died.",
+    "b": [
+     {
+      "q": "Which word best describes the ground in a swamp?",
+      "o": [
+       "Waterlogged",
+       "Dry and sandy",
+       "Frozen solid",
+       "Bare rock"
+      ],
+      "a": 0,
+      "x": "Swamp ground is soaked with water, which keeps oxygen out."
+     },
+     {
+      "q": "What was the climate like where the coal-forming swamp forests grew?",
+      "o": [
+       "Warm and wet",
+       "Cold and dry",
+       "Hot and dry",
+       "Freezing and snowy"
+      ],
+      "a": 0,
+      "x": "Warm, wet conditions let huge forests grow, which provided lots of plant material."
+     }
+    ],
+    "id": "c5"
+   },
+   {
+    "q": "What is peat?",
+    "o": [
+     "Partly decayed plant material from a swamp",
+     "Plant remains that have fully rotted into soil",
+     "Hard, shiny black rock that is almost pure carbon",
+     "Oil that has soaked into the mud of a swamp"
+    ],
+    "a": 0,
+    "w": {
+     "1": "If the plants had fully rotted, the carbon would have gone into the air and there would be nothing left.",
+     "2": "That describes anthracite, the final stage of coal formation, not peat.",
+     "3": "Peat is made of plant material, not oil."
+    },
+    "x": "Peat is the soft, brown, partly decayed plant material that builds up in waterlogged swamps. It is the first stage of coal.",
+    "b": [
+     {
+      "q": "Why does plant material build up as peat in a swamp instead of rotting away?",
+      "o": [
+       "Waterlogged ground has little oxygen",
+       "Warm swamp water stops decay completely",
+       "Swamp plants are poisonous to bacteria",
+       "Peat is too heavy for bacteria to reach"
+      ],
+      "a": 0,
+      "x": "Water fills the spaces in the soil, so there is little oxygen and decay is slowed."
+     },
+     {
+      "q": "Peat is the first stage in the formation of…",
+      "o": [
+       "coal",
+       "crude oil",
+       "sandstone",
+       "natural gas"
+      ],
+      "a": 0,
+      "x": "Peat → lignite → bituminous coal → anthracite."
+     }
+    ],
+    "id": "c6"
+   }
+  ]
+ },
+ {
+  "id": "s4",
+  "title": "Coal 2: from peat to coal",
+  "teach": "\n<p>Over time the swamp was flooded by the sea or rivers, and the peat was covered by layers of <b>sediment</b> (sand and mud). As more layers built up on top:</p>\n<ul class=\"pts\">\n<li>the <b>pressure</b> increased, squashing the peat and squeezing out <b>water</b> and gases;</li>\n<li>the <b>temperature</b> increased as it was buried deeper;</li>\n<li>over <b>millions of years</b>, heat and pressure changed the peat into <b>coal</b>. This is called <b>coalification</b>.</li>\n</ul>\n{{FIG:coalstages}}\n<p>The deeper and longer the burial, the more the peat changes. Each stage contains <b>more carbon</b> and less water, is harder, and releases more energy when burned:</p>\n{{FIG:rank}}\n<p class=\"examtip\"><b>Where is it found?</b> Coal is found as <b>seams</b> (layers) between layers of sedimentary rock such as sandstone and shale.</p>",
+  "checks": [
+   {
+    "q": "What turns buried peat into coal?",
+    "o": [
+     "Heat and pressure over millions of years",
+     "Oxygen seeping down through cracks in the rock",
+     "Decomposers working faster deep underground",
+     "Rainwater soaking through it for a few years"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Oxygen would let decomposers rot the peat away, not turn it into coal.",
+     "2": "Decomposers stop working. The change is caused by heat and pressure.",
+     "3": "Water is squeezed out, not added, and it takes millions of years, not a few."
+    },
+    "x": "Deep burial increases heat and pressure, which over millions of years changes peat into coal.",
+    "b": [
+     {
+      "q": "As peat is buried deeper, what happens to the temperature and pressure?",
+      "o": [
+       "Both increase",
+       "Both decrease",
+       "Temperature rises, pressure falls",
+       "Pressure rises, temperature falls"
+      ],
+      "a": 0,
+      "x": "Deeper = more rock pressing down and a hotter Earth."
+     },
+     {
+      "q": "What is squeezed out of peat as it is compressed?",
+      "o": [
+       "Water",
+       "Carbon",
+       "Sand",
+       "Oil"
+      ],
+      "a": 0,
+      "x": "Squeezing removes water, so the carbon becomes more concentrated."
+     }
+    ],
+    "id": "c7"
+   },
+   {
+    "q": "Anthracite has a higher carbon content than lignite. Why?",
+    "o": [
+     "It was buried deeper, with more heat and pressure",
+     "It formed from a different type of animal",
+     "Its plants decayed more completely in the swamp",
+     "It formed more recently, so less of its carbon was lost"
+    ],
+    "a": 0,
+    "w": {
+     "1": "All coal forms from plants, not animals.",
+     "2": "More decay would leave less carbon. The difference comes from heat and pressure after burial.",
+     "3": "Anthracite has usually been buried for longer and deeper. More time and heat means more carbon."
+    },
+    "x": "Greater depth means more heat and pressure, which drive off more water and gases and leave more carbon.",
+    "b": [
+     {
+      "q": "Which order goes from the lowest to the highest carbon content?",
+      "o": [
+       "Peat → lignite → bituminous → anthracite",
+       "Lignite → peat → anthracite → bituminous",
+       "Anthracite → bituminous → lignite → peat",
+       "Peat → anthracite → lignite → bituminous"
+      ],
+      "a": 0,
+      "x": "Carbon increases at each stage: peat → lignite → bituminous coal → anthracite."
+     },
+     {
+      "q": "Lignite is also called brown coal. How does it compare with anthracite?",
+      "o": [
+       "Softer, with less carbon",
+       "Harder, with more carbon",
+       "Harder, with less carbon",
+       "Softer, with more carbon"
+      ],
+      "a": 0,
+      "x": "Lignite is an early stage. It is softer and has less carbon than anthracite."
+     }
+    ],
+    "id": "c8"
+   }
+  ]
+ },
+ {
+  "id": "s5",
+  "title": "Petroleum (crude oil)",
+  "teach": "\n<p>Oil did <b>not</b> form from plants on land. It formed from <b>plankton</b>: microscopic algae (phytoplankton) and tiny animals (zooplankton) that drifted in the sea in enormous numbers.</p>\n<ol class=\"steps\">\n<li>The plankton died and <b>sank to the seabed</b>.</li>\n<li>They mixed with <b>mud</b> on the seabed, where there was very little oxygen. Decay was <b>incomplete</b>, forming an organic-rich mud.</li>\n<li>The mud was <b>buried</b> under more layers of sediment and squashed into a rock called <b>shale</b>. Inside the shale, the remains slowly changed into a waxy substance called <b>kerogen</b>.</li>\n<li>Buried deeper, at higher <b>temperature and pressure</b>, the kerogen was \"cooked\" into <b>crude oil</b>, a mixture of many hydrocarbons. This took <b>millions of years</b>.</li>\n</ol>\n{{FIG:oilstages}}\n<p class=\"examtip\"><b>Myth buster:</b> oil is not made from dinosaurs! It comes mostly from microscopic sea life. The rock it forms in is called the <b>source rock</b>.</p>",
+  "checks": [
+   {
+    "q": "Crude oil formed mainly from…",
+    "o": [
+     "plankton that lived in the sea",
+     "trees in swamp forests",
+     "dinosaurs that died and were buried on land",
+     "whales that sank to the seabed"
+    ],
+    "a": 0,
+    "w": {
+     "1": "That's how coal formed. Oil formed from sea life.",
+     "2": "A popular myth. Oil formed mainly from microscopic plankton.",
+     "3": "Large animals made up only a tiny part. It was the huge numbers of microscopic plankton that formed oil."
+    },
+    "x": "Oil formed from huge numbers of microscopic plankton that died, sank and were buried in seabed mud.",
+    "b": [
+     {
+      "q": "What are plankton?",
+      "o": [
+       "Tiny organisms that drift in water",
+       "Large fish that live on the deep seabed",
+       "Plants with roots in swamp soil",
+       "Rocks made from sea shells"
+      ],
+      "a": 0,
+      "x": "Plankton are tiny (often microscopic) algae and animals that drift in the sea."
+     },
+     {
+      "q": "Where did the dead plankton collect?",
+      "o": [
+       "In mud on the seabed",
+       "On the sea surface",
+       "On beaches above the tide",
+       "In the air above the sea"
+      ],
+      "a": 0,
+      "x": "They sank and collected in the mud on the seabed."
+     }
+    ],
+    "id": "c9"
+   },
+   {
+    "q": "What is kerogen?",
+    "o": [
+     "Waxy material formed from buried plankton",
+     "The impermeable rock that traps oil underground",
+     "A gas produced by decomposers in seabed mud",
+     "Fuel made from crude oil at a refinery"
+    ],
+    "a": 0,
+    "w": {
+     "1": "That's cap rock. Kerogen is inside the source rock.",
+     "2": "Kerogen is a solid, waxy substance in the rock. Heating breaks it down into oil and gas later.",
+     "3": "Refining happens after oil is extracted. Kerogen forms underground, before the oil."
+    },
+    "x": "Kerogen is the waxy material that the buried plankton remains turn into. Heat later breaks it down into oil and gas.",
+    "b": [
+     {
+      "q": "What happens to kerogen when it is heated deep underground?",
+      "o": [
+       "It breaks down into oil and gas",
+       "It turns back into living plankton cells",
+       "It turns into sand and clay",
+       "It freezes into ice"
+      ],
+      "a": 0,
+      "x": "Heat and pressure 'cook' kerogen into oil (and, if hotter, gas)."
+     },
+     {
+      "q": "Organic-rich seabed mud is squashed into which rock?",
+      "o": [
+       "Shale",
+       "Granite",
+       "Marble",
+       "Basalt"
+      ],
+      "a": 0,
+      "x": "Compressed mud becomes shale, the source rock for oil and gas."
+     }
+    ],
+    "id": "c10"
+   }
+  ]
+ },
+ {
+  "id": "s6",
+  "title": "Natural gas (methane)",
+  "teach": "\n<p>Natural gas is mostly <b>methane</b> (CH₄). Most of it forms in the <b>same way as oil</b>, from plankton buried in seabed mud.</p>\n<p>The difference is <b>how hot</b> the source rock gets. If it is buried <b>deeper</b>, it gets <b>hotter</b>, and the kerogen and oil are broken down into smaller molecules: <b>gas</b>.</p>\n{{FIG:window}}\n<p>This is why oil and natural gas are often <b>found together</b>: they come from the same source rock.</p>\n<p>Some natural gas also forms from <b>coal</b> as it is buried and heated. This is why coal mines can contain dangerous methane gas.</p>",
+  "checks": [
+   {
+    "q": "How is the formation of natural gas different from that of oil?",
+    "o": [
+     "Gas forms at higher temperatures, deeper down",
+     "Gas forms from plants, but oil forms from animals",
+     "Gas forms near the surface, where it is cooler",
+     "Gas forms in a few years, but oil takes millions"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Both mostly come from the same plankton remains.",
+     "2": "It's the opposite: gas forms deeper, where it is hotter.",
+     "3": "Both take millions of years to form."
+    },
+    "x": "Oil and gas come from the same remains. Higher temperatures, deeper down, break the kerogen and oil into gas.",
+    "b": [
+     {
+      "q": "What is the main gas in natural gas?",
+      "o": [
+       "Methane",
+       "Oxygen",
+       "Carbon dioxide",
+       "Nitrogen"
+      ],
+      "a": 0,
+      "x": "Natural gas is mostly methane, CH₄."
+     },
+     {
+      "q": "Why are oil and natural gas often found together?",
+      "o": [
+       "They form from the same remains",
+       "Gas is made when oil is burned",
+       "Oil soaks up gas from the air",
+       "Drillers pump gas into oil wells"
+      ],
+      "a": 0,
+      "x": "Both form from plankton remains in the same source rock."
+     }
+    ],
+    "id": "c11"
+   },
+   {
+    "q": "Use the diagram. A source rock is buried until its temperature is about 160 °C. What is it most likely to produce?",
+    "o": [
+     "Mainly natural gas",
+     "Mainly crude oil",
+     "Mainly coal",
+     "Nothing yet"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Look at the diagram. 160 °C is hotter than the oil window. It is in the gas window.",
+     "2": "Coal forms from plants buried in swamps, not from kerogen in a source rock.",
+     "3": "160 °C is well above the temperature where kerogen starts to change, so something will have formed."
+    },
+    "x": "160 °C is in the gas window, so the kerogen and oil break down into natural gas.",
+    "b": [
+     {
+      "q": "Use the diagram. What happens to the temperature as depth increases?",
+      "o": [
+       "It increases",
+       "It decreases",
+       "It stays the same",
+       "It rises, then falls"
+      ],
+      "a": 0,
+      "x": "The deeper the rock, the hotter it is.",
+      "fig": "window"
+     },
+     {
+      "q": "Use the diagram. At about 80 °C, kerogen mainly forms…",
+      "o": [
+       "oil",
+       "gas",
+       "coal",
+       "peat"
+      ],
+      "a": 0,
+      "x": "80 °C is in the oil window.",
+      "fig": "window"
+     }
+    ],
+    "fig": "window",
+    "id": "c12"
+   }
+  ]
+ },
+ {
+  "id": "s7",
+  "title": "Trapping oil and gas",
+  "teach": "\n<p>Oil and gas don't stay in the source rock. They are <b>less dense than water</b> and are under pressure, so they slowly move (<b>migrate</b>) <b>upwards</b>.</p>\n<p>They move through <b>porous, permeable rock</b>, such as <b>sandstone</b>. This rock has tiny spaces between its grains that fluids can flow through.</p>\n<p>If nothing stops them, they reach the surface and escape. They are only <b>trapped</b> when they meet a layer of <b>impermeable cap rock</b>, such as shale or clay, which fluids cannot pass through. Traps are often <b>dome-shaped</b> folds in the rock.</p>\n{{FIG:trap}}\n<p>In the trap, the fluids separate by density: <b>gas at the top</b>, then <b>oil</b>, then <b>water</b> below.</p>\n<p class=\"examtip\"><b>Not a lake!</b> The oil isn't in an underground pool. It fills the tiny spaces in the reservoir rock, like water in a sponge.</p>",
+  "checks": [
+   {
+    "q": "Why do oil and gas move upwards from the source rock?",
+    "o": [
+     "They are less dense than the water in the rock",
+     "They are denser than the rock around them",
+     "They are pulled up by the roots of plants",
+     "They are heated by sunlight underground"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Denser things sink. Oil and gas rise because they are less dense.",
+     "2": "Oil and gas form kilometres below any plant roots.",
+     "3": "Sunlight doesn't reach underground. They rise because they are less dense than water."
+    },
+    "x": "Oil and gas are less dense than water, so they rise through the water-filled spaces in porous rock.",
+    "b": [
+     {
+      "q": "What does 'permeable' mean for a rock?",
+      "o": [
+       "Fluids can flow through it",
+       "It is too hard to be scratched",
+       "It contains lots of fossils",
+       "It dissolves in water"
+      ],
+      "a": 0,
+      "x": "Permeable rock lets liquids and gases pass through it."
+     },
+     {
+      "q": "Cooking oil floats on top of water. This shows that oil is…",
+      "o": [
+       "less dense than water",
+       "denser than water",
+       "the same density as water",
+       "able to dissolve in water"
+      ],
+      "a": 0,
+      "x": "Less dense liquids float on denser ones, which is why oil rises through wet rock."
+     }
+    ],
+    "id": "c13"
+   },
+   {
+    "q": "Use the diagram. What stops the oil and gas from escaping to the surface?",
+    "o": [
+     "An impermeable cap rock above them",
+     "A porous sandstone layer on top",
+     "The water in the rock above them",
+     "The source rock lying above them"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Porous, permeable rock lets oil and gas through. That's the reservoir rock, which holds them.",
+     "2": "In the trap, the water is below the oil, not above it.",
+     "3": "The source rock is below, where the oil and gas formed."
+    },
+    "x": "The cap rock is impermeable: fluids can't pass through it, so oil and gas collect beneath it.",
+    "b": [
+     {
+      "q": "Use the diagram. Which order is found in the trap, from top to bottom?",
+      "o": [
+       "Gas, oil, water",
+       "Water, oil, gas",
+       "Oil, gas, water",
+       "Oil, water, gas"
+      ],
+      "a": 0,
+      "x": "Least dense at the top: gas, then oil, then water.",
+      "fig": "trap"
+     },
+     {
+      "q": "Where is the oil stored in a reservoir rock?",
+      "o": [
+       "In tiny spaces between grains",
+       "In a large lake in a cave underground",
+       "Inside fossil shells only",
+       "Inside the cap rock"
+      ],
+      "a": 0,
+      "x": "Oil fills the pores between the grains, like water in a sponge."
+     }
+    ],
+    "fig": "trap",
+    "id": "c14"
+   }
+  ]
+ },
+ {
+  "id": "s8",
+  "title": "Putting it all together",
+  "teach": "\n<p>Use this table to compare the three fossil fuels.</p>\n{{FIG:compare}}\n<p class=\"examtip\"><b>Exam tip:</b> to \"describe the formation\" of a fossil fuel, give the steps in order: <b>what</b> died → <b>where</b> → <b>buried</b> by sediment → <b>little oxygen</b>, so decay is incomplete → <b>heat and pressure</b> → <b>millions of years</b>.</p>",
+  "checks": [
+   {
+    "q": "Which statement is true of all three fossil fuels?",
+    "o": [
+     "They formed with little oxygen present",
+     "They formed from plankton in the sea",
+     "They formed in swamp forests on land",
+     "They formed over just a few thousand years"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Coal formed from land plants, not plankton.",
+     "2": "Only coal formed in swamp forests. Oil and gas formed in the sea.",
+     "3": "All of them took millions of years."
+    },
+    "x": "All three formed from remains buried with little oxygen, so decay was incomplete, followed by heat and pressure over millions of years.",
+    "b": [
+     {
+      "q": "Which fuel formed mainly from land plants?",
+      "o": [
+       "Coal",
+       "Crude oil",
+       "Natural gas",
+       "All three equally"
+      ],
+      "a": 0,
+      "x": "Coal formed from swamp plants. Oil and gas formed from plankton."
+     },
+     {
+      "q": "Which fuels formed mainly from sea plankton?",
+      "o": [
+       "Oil and natural gas",
+       "Coal and oil",
+       "Coal only",
+       "Coal and natural gas"
+      ],
+      "a": 0,
+      "x": "Oil and natural gas formed from plankton buried in seabed mud."
+     }
+    ],
+    "id": "c15"
+   },
+   {
+    "q": "A student writes: ‘Coal forms when dead plants rot away completely in a swamp.’ What is wrong with this?",
+    "o": [
+     "The plants only partly decay, so carbon is left",
+     "Coal forms from creatures in the sea, not from plants",
+     "Swamps have too much oxygen for coal to form",
+     "Rotting is fine, but it must happen in the sea"
+    ],
+    "a": 0,
+    "w": {
+     "1": "Coal does form from plants. The error is about how much they rot.",
+     "2": "Waterlogged swamps have very little oxygen. That's why peat builds up.",
+     "3": "Coal forms from land plants in swamps. The error is the word 'completely'."
+    },
+    "x": "If the plants rotted away completely, their carbon would go into the air as carbon dioxide. Coal forms because decay is incomplete.",
+    "b": [
+     {
+      "q": "If decomposers completely break down dead plants, where does most of their carbon go?",
+      "o": [
+       "Into the air as carbon dioxide",
+       "Into a coal seam underground",
+       "Into the sea as crude oil",
+       "Into new swamp water as dissolved sugar"
+      ],
+      "a": 0,
+      "x": "Complete decay releases the carbon as carbon dioxide, so nothing is left to form coal."
+     },
+     {
+      "q": "Which conditions are needed for coal to form?",
+      "o": [
+       "Burial, little oxygen, heat and pressure",
+       "Plenty of oxygen, active decomposers and sunlight",
+       "Freezing, drying out and strong wind",
+       "Air, sunlight and warm water"
+      ],
+      "a": 0,
+      "x": "Burial cuts off oxygen; then heat and pressure work over millions of years."
+     }
+    ],
+    "id": "c16"
+   }
+  ]
+ }
+];
+const SUMMARY = [
+ "Fossil fuels formed from the remains of organisms that lived millions of years ago. They are non-renewable.",
+ "The recipe: organisms die, are buried quickly by sediment, there is little or no oxygen so decay is incomplete, then heat and pressure act over millions of years.",
+ "Coal formed from plants in warm, wet swamp forests. Partly decayed plant material built up as peat.",
+ "Peat was buried by sediment. Pressure squeezed out water, and heat and pressure turned it into coal: peat → lignite → bituminous coal → anthracite, with more carbon at each stage.",
+ "Oil formed from plankton that sank into seabed mud with little oxygen. The mud became shale and the remains became kerogen, which heat and pressure turned into oil.",
+ "Natural gas (mostly methane) forms in the same way as oil, but at higher temperatures, deeper down. Some also forms from coal.",
+ "Oil and gas are less dense than water, so they rise through porous rock until an impermeable cap rock traps them: gas on top, then oil, then water."
+];
+
+/* ===== Diagrams: formation of fossil fuels ===== */
+const F = {};
+const ar = (x1, y1, x2, y2, cls = "flow") => {
+  const a = Math.atan2(y2 - y1, x2 - x1), h = 9;
+  const p1 = [x2 - h * Math.cos(a - 0.45), y2 - h * Math.sin(a - 0.45)], p2 = [x2 - h * Math.cos(a + 0.45), y2 - h * Math.sin(a + 0.45)];
+  return `<g class="${cls}"><line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><path d="M ${p1[0].toFixed(1)} ${p1[1].toFixed(1)} L ${x2} ${y2} L ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}"/></g>`;
+};
+const lead = (x1, y1, x2, y2) => `<line class="lead" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/><circle class="dot" cx="${x1}" cy="${y1}" r="3"/>`;
+const mkr = (n, x, y) => `<circle class="mk" cx="${x}" cy="${y}" r="13"/><text class="mkn" x="${x}" y="${y + 6}" text-anchor="middle">${n}</text>`;
+const T = (x, y, t, cls = "lbl", anchor = "start") => `<text class="${cls}" x="${x}" y="${y}" text-anchor="${anchor}">${t}</text>`;
+
+/* --- S1: the three fuels --- */
+F.three = () => `<figure class="fig"><div class="src3">
+  <div class="tile ff-coal"><h4>Coal</h4><p class="st8">Solid</p><p>Formed from <b>plants</b> that grew in swamp forests on land.</p></div>
+  <div class="tile ff-oil"><h4>Petroleum (crude oil)</h4><p class="st8">Liquid</p><p>Formed from <b>plankton</b>, tiny organisms that lived in the sea.</p></div>
+  <div class="tile ff-gas"><h4>Natural gas</h4><p class="st8">Gas, mostly methane (CH₄)</p><p>Formed from plankton, like oil, but at <b>higher temperatures</b>.</p></div>
+</div><figcaption>The three fossil fuels and what they formed from.</figcaption></figure>`;
+
+/* --- S2: the recipe --- */
+F.recipe = () => `<figure class="fig"><div class="chain flowc">
+  <div class="part"><b>1. Death</b><span>huge numbers of organisms die</span></div><i></i>
+  <div class="part"><b>2. Burial</b><span>covered quickly by sediment</span></div><i></i>
+  <div class="part"><b>3. No oxygen</b><span>decay is incomplete</span></div><i></i>
+  <div class="part"><b>4. Heat + pressure</b><span>buried deeper and deeper</span></div><i></i>
+  <div class="part out"><b>5. Millions of years</b><span>coal, oil or gas</span></div>
+</div><figcaption>The same five steps apply to coal, oil and natural gas.</figcaption></figure>`;
+
+/* --- S3: swamp forest and peat --- */
+function tree(x, top, base) {
+  const fr = [-60, -35, -12, 12, 35, 60].map(d => { const r = d * Math.PI / 180; return `<path class="frond" d="M ${x} ${top} Q ${x + 34 * Math.sin(r)} ${top - 26} ${x + 58 * Math.sin(r)} ${top + 14 - 20 * Math.cos(r)}"/>`; }).join("");
+  return `<rect class="trunk" x="${x - 6}" y="${top}" width="12" height="${base - top}" rx="3"/>${fr}`;
+}
+F.swamp = () => `<figure class="fig"><svg viewBox="0 0 470 330" role="img" aria-label="A swamp forest. Tall tree ferns stand in shallow still water. Dead trunks and leaves have fallen into the water and lie on a thick brown layer of peat, partly decayed plant material, above older rock.">
+  <rect class="sky" x="0" y="0" width="470" height="170"/>
+  <rect class="water" x="0" y="170" width="470" height="60"/>
+  <rect class="peat" x="0" y="230" width="470" height="50"/>
+  <rect class="rock" x="0" y="280" width="470" height="50"/>
+  ${tree(70, 60, 200)}${tree(190, 40, 200)}${tree(320, 70, 200)}${tree(420, 50, 200)}
+  <rect class="trunk" x="110" y="214" width="110" height="11" rx="4" transform="rotate(-6 165 219)"/>
+  <rect class="trunk" x="270" y="218" width="90" height="10" rx="4" transform="rotate(8 315 223)"/>
+  <rect class="trunk" x="20" y="240" width="80" height="8" rx="3" opacity=".55"/><rect class="trunk" x="240" y="256" width="100" height="8" rx="3" opacity=".55"/><rect class="trunk" x="380" y="246" width="70" height="8" rx="3" opacity=".55"/>
+  ${mkr(1, 360, 60)}${mkr(2, 445, 196)}${mkr(3, 230, 205)}${mkr(4, 445, 255)}${mkr(5, 445, 305)}
+</svg><ol class="key"><li><b>Tree ferns</b> and other swamp plants</li><li><b>Still, waterlogged swamp</b>: very little oxygen</li><li><b>Dead plants</b> fall into the water</li><li><b>Peat</b>: partly decayed plant material</li><li><b>Older rock</b></li></ol><figcaption>Swamp forests about 300 million years ago. Low oxygen in the water stopped the plants from fully decaying, so peat built up.</figcaption></figure>`;
+
+/* --- S4: burial of peat --- */
+function col(x, title, layers, note) {
+  let y = 40, s = `<text class="cap b" x="${x + 70}" y="24" text-anchor="middle">${title}</text>`;
+  layers.forEach(([cls, h]) => { s += `<rect class="${cls}" x="${x}" y="${y}" width="140" height="${h}"/>`; y += h; });
+  s += `<rect class="frame" x="${x}" y="40" width="140" height="${y - 40}"/>`;
+  return s + note;
+}
+F.coalstages = () => `<figure class="fig"><svg viewBox="0 0 640 330" role="img" aria-label="Three columns of rock layers. 1: a thick peat layer near the surface under swamp water. 2: the peat is covered by layers of sand and mud and is squashed thinner. 3: many layers lie on top and the peat has become a thin, hard, black seam of coal.">
+  ${col(20, "1. Swamp", [["water", 40], ["peat", 70], ["rock", 130]], "")}
+  ${col(250, "2. Buried", [["water", 20], ["sand", 45], ["mud", 40], ["sand", 40], ["peat", 45], ["rock", 50]], "")}
+  ${col(480, "3. Deep down", [["sand", 40], ["mud", 35], ["sand", 40], ["mud", 35], ["sand", 40], ["coal", 22], ["rock", 28]], "")}
+  ${ar(172, 150, 240, 150)}${ar(402, 150, 470, 150)}
+  ${T(90, 300, "peat forms", "lbl", "middle")}
+  ${T(320, 300, "peat squashed:", "lbl", "middle")}${T(320, 320, "water squeezed out", "lbl", "middle")}
+  ${T(550, 300, "heat + pressure:", "lbl", "middle")}${T(550, 320, "a seam of coal", "lbl b", "middle")}
+</svg><div class="legend"><span><i class="sq peat"></i>peat</span><span><i class="sq sand"></i>sand</span><span><i class="sq mud"></i>mud</span><span><i class="sq coal"></i>coal</span></div>
+<figcaption>As more sediment piles on top, the peat is buried deeper, squashed and heated. Over millions of years it becomes coal.</figcaption></figure>`;
+
+F.rank = () => {
+  const rows = [["Peat", 55, "soft, brown, spongy", "peat"], ["Lignite (brown coal)", 65, "soft, crumbly", "lignite"], ["Bituminous coal", 80, "hard, black", "bitum"], ["Anthracite", 92, "very hard, shiny black", "coal"]];
+  return `<figure class="fig"><div class="rank" role="img" aria-label="Approximate carbon content: peat about 55%, lignite about 65%, bituminous coal about 80%, anthracite about 92%. Carbon increases with deeper burial, more heat and pressure, and more time.">
+  ${rows.map(([n, v, d, c]) => `<div class="rk"><div class="rk-n"><b>${n}</b><span>${d}</span></div><div class="rk-bar"><i class="bg-${c}" style="width:${v}%"></i></div><b class="rk-v">≈${v}%</b></div>`).join("")}
+  <p class="rk-note">↓ deeper, hotter and longer · bars show approximate carbon content (% by mass)</p></div>
+  <figcaption>Each stage has more carbon and less water than the one before, so it releases more energy when burned.</figcaption></figure>`;
+};
+
+/* --- S5: oil formation --- */
+function plank(x0, y0, w, h, n, seed) { let s = "", r = seed; for (let i = 0; i < n; i++) { r = (r * 9301 + 49297) % 233280; const x = x0 + (r / 233280) * w; r = (r * 9301 + 49297) % 233280; const y = y0 + (r / 233280) * h; s += `<circle class="plk" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3"/>`; } return s; }
+function drops(x0, y0, w, h, n, seed) { let s = "", r = seed; for (let i = 0; i < n; i++) { r = (r * 9301 + 49297) % 233280; const x = x0 + (r / 233280) * w; r = (r * 9301 + 49297) % 233280; const y = y0 + (r / 233280) * h; s += `<ellipse class="oil" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="5" ry="3.5"/>`; } return s; }
+F.oilstages = () => `<figure class="fig"><svg viewBox="0 0 660 340" role="img" aria-label="Three stages. 1: tiny plankton in the sea die and sink onto mud on the seabed. 2: the mud with the plankton remains is buried under layers of sediment, with no oxygen, and becomes shale. 3: buried deep and heated, the remains change into droplets of oil in the rock.">
+  <text class="cap b" x="100" y="24" text-anchor="middle">1. Die and sink</text>
+  <rect class="water" x="20" y="40" width="160" height="170"/><rect class="mud" x="20" y="210" width="160" height="50"/><rect class="rock" x="20" y="260" width="160" height="30"/>
+  ${plank(30, 50, 140, 80, 16, 7)}${plank(30, 205, 140, 40, 18, 3)}${ar(60, 120, 60, 190)}${ar(140, 110, 140, 190)}
+  <rect class="frame" x="20" y="40" width="160" height="250"/>
+  <text class="cap b" x="330" y="24" text-anchor="middle">2. Buried</text>
+  <rect class="water" x="250" y="40" width="160" height="40"/><rect class="sand" x="250" y="80" width="160" height="45"/><rect class="mud" x="250" y="125" width="160" height="40"/><rect class="sand" x="250" y="165" width="160" height="45"/><rect class="shale" x="250" y="210" width="160" height="40"/><rect class="rock" x="250" y="250" width="160" height="40"/>
+  ${plank(260, 214, 140, 30, 14, 11)}<rect class="frame" x="250" y="40" width="160" height="250"/>
+  <text class="cap b" x="560" y="24" text-anchor="middle">3. Heated</text>
+  <rect class="sand" x="480" y="40" width="160" height="40"/><rect class="mud" x="480" y="80" width="160" height="35"/><rect class="sand" x="480" y="115" width="160" height="40"/><rect class="mud" x="480" y="155" width="160" height="35"/><rect class="shale" x="480" y="190" width="160" height="40"/><rect class="rock" x="480" y="230" width="160" height="60"/>
+  ${drops(492, 196, 136, 28, 12, 5)}<rect class="frame" x="480" y="40" width="160" height="250"/>
+  ${ar(188, 165, 242, 165)}${ar(418, 165, 472, 165)}
+  ${T(100, 312, "dead plankton settle", "lbl", "middle")}${T(100, 332, "in seabed mud", "lbl", "middle")}
+  ${T(330, 312, "mud becomes shale;", "lbl", "middle")}${T(330, 332, "remains → kerogen", "lbl", "middle")}
+  ${T(560, 312, "heat + pressure:", "lbl", "middle")}${T(560, 332, "kerogen → oil", "lbl b", "middle")}
+</svg><div class="legend"><span><i class="sq plk"></i>plankton remains</span><span><i class="sq mud"></i>mud</span><span><i class="sq shale"></i>shale (source rock)</span><span><i class="sq oil"></i>oil</span></div>
+<figcaption>Oil forms from microscopic sea life buried in mud with no oxygen, then heated over millions of years.</figcaption></figure>`;
+
+/* --- S6: oil and gas windows --- */
+F.window = () => {
+  const y = t => 30 + (t - 20) * 1.4; // 20 °C at surface → 200 °C at y=282
+  const x0 = 120, w = 300;
+  let s = `<svg viewBox="0 0 640 320" role="img" aria-label="Temperature increases with depth. Below about 60 degrees Celsius kerogen is not yet changed. From about 60 to 120 degrees, kerogen mainly forms oil: the oil window. Above about 120 degrees, mainly natural gas forms: the gas window.">`;
+  s += `<rect class="band-cool" x="${x0}" y="${y(20)}" width="${w}" height="${y(60) - y(20)}"/>`;
+  s += `<rect class="band-oil" x="${x0}" y="${y(60)}" width="${w}" height="${y(120) - y(60)}"/>`;
+  s += `<rect class="band-gas" x="${x0}" y="${y(120)}" width="${w}" height="${y(200) - y(120)}"/>`;
+  s += `<rect class="frame" x="${x0}" y="${y(20)}" width="${w}" height="${y(200) - y(20)}"/>`;
+  [20, 40, 60, 80, 100, 120, 140, 160, 180, 200].forEach(t => { s += `<line class="axis" x1="${x0 - 6}" y1="${y(t)}" x2="${x0}" y2="${y(t)}"/><text class="num" x="${x0 - 10}" y="${y(t) + 4}" text-anchor="end">${t}</text>`; });
+  s += `<text class="axis-t" transform="translate(40 ${y(110)}) rotate(-90)" text-anchor="middle">Temperature / °C</text>`;
+  s += ar(470, y(30), 470, y(195), "flow big") + `<text class="cap" transform="translate(492 ${y(110)}) rotate(90)" text-anchor="middle">deeper underground</text>`;
+  s += T(x0 + w / 2, y(40) + 5, "too cool: no change yet", "lbl", "middle");
+  s += T(x0 + w / 2, y(90) - 4, "OIL WINDOW", "lbl b", "middle") + T(x0 + w / 2, y(90) + 16, "kerogen → mainly oil", "lbl", "middle");
+  s += T(x0 + w / 2, y(160) - 4, "GAS WINDOW", "lbl b", "middle") + T(x0 + w / 2, y(160) + 16, "mainly natural gas (methane)", "lbl", "middle");
+  return `<figure class="fig">${s}</svg><figcaption>The temperatures are approximate. The key idea: hot → oil; hotter (deeper) → gas.</figcaption></figure>`;
+};
+
+/* --- S7: an oil and gas trap --- */
+F.trap = () => {
+  const cx = 260, A = 70, wd = 150;
+  const g = x => Math.exp(-(((x - cx) / wd) ** 2));
+  const curve = (base, dir = 1) => { let d = ""; for (let x = 0; x <= 520; x += 10) d += (x ? " L " : "M ") + x + " " + (base - A * g(x)).toFixed(1); return d; };
+  const band = (top, bot) => { let d = curve(top); for (let x = 520; x >= 0; x -= 10) d += " L " + x + " " + (bot - A * g(x)).toFixed(1); return d + " Z"; };
+  const capT = 150, resT = 185, resB = 245, srcB = 280;
+  const crest = resT - A; // top of reservoir at crest
+  const goc = crest + 22, owc = crest + 46;
+  let s = `<svg viewBox="0 0 520 360" role="img" aria-label="Cross-section of rock layers bent up into a dome. Oil and gas move upwards from the source rock at the bottom into a porous reservoir rock. An impermeable cap rock above stops them escaping. At the top of the dome, gas sits above oil, with water below. A drilling rig on the surface drills down into the trap.">`;
+  s += `<defs><clipPath id="resclip"><path d="${band(resT, resB)}"/></clipPath><pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.2" class="dotfill"/></pattern></defs>`;
+  s += `<rect class="sky" x="0" y="0" width="520" height="40"/>`;
+  s += `<rect class="rock" x="0" y="40" width="520" height="320"/>`;
+  s += `<path class="shale" d="${band(capT, resT)}"/>`;
+  s += `<path class="water" d="${band(resT, resB)}"/>`;
+  s += `<g clip-path="url(#resclip)"><rect class="gas" x="0" y="0" width="520" height="${goc}"/><rect class="oil" x="0" y="${goc}" width="520" height="${owc - goc}"/></g>`;
+  s += `<path fill="url(#dots)" d="${band(resT, resB)}"/>`;
+  s += `<path class="src" d="${band(resB + 8, srcB + 8)}"/>`;
+  s += `<line class="ground" x1="0" y1="40" x2="520" y2="40"/>`;
+  s += `<path class="rig" d="M ${cx - 16} 40 L ${cx} 6 L ${cx + 16} 40 M ${cx - 10} 26 L ${cx + 10} 26"/><line class="well" x1="${cx}" y1="40" x2="${cx}" y2="${crest + 14}"/>`;
+  [[110, srcB - 30, 130, resB - 40], [410, srcB - 30, 390, resB - 40], [150, resB - 20, 200, crest + 40], [370, resB - 20, 320, crest + 40]].forEach(([a, b, c, d]) => s += ar(a, b, c, d, "flow mig"));
+  const mk = (n, x, y) => `<circle class="mk" cx="${x}" cy="${y}" r="13"/><text class="mkn" x="${x}" y="${y + 6}" text-anchor="middle">${n}</text>`;
+  s += mk(1, cx + 34, 20) + mk(2, 420, capT - A * g(420) + 17) + mk(3, cx, crest + 11) + mk(4, cx + 70, crest + 36) + mk(5, 470, resT - A * g(470) + 32) + mk(6, 60, srcB - A * g(60) - 8);
+  return `<figure class="fig">${s}</svg><ol class="key"><li><b>Drilling rig</b></li><li><b>Cap rock</b>: impermeable (e.g. shale), seals the trap</li><li><b>Natural gas</b>: at the top</li><li><b>Oil</b>: below the gas</li><li><b>Reservoir rock</b>: porous (e.g. sandstone), with water below the oil</li><li><b>Source rock</b> (shale): where the oil and gas formed</li><li class="nk"><span class="mig"></span> oil and gas moving upwards</li></ol><figcaption>A dome-shaped trap. Oil and gas rise through porous rock until an impermeable cap rock stops them.</figcaption></figure>`;
+};
+
+/* --- S8: summary table --- */
+F.compare = () => `<figure class="fig"><div class="tblwrap"><table class="st">
+  <thead><tr><th></th><th>Coal</th><th>Petroleum (oil)</th><th>Natural gas</th></tr></thead>
+  <tbody>
+    <tr><th>Formed from</th><td>Plants (trees, ferns)</td><td>Plankton</td><td>Plankton (some from coal)</td></tr>
+    <tr><th>Where</th><td>Swamp forests on land</td><td>Seabed mud</td><td>Seabed mud</td></tr>
+    <tr><th>In-between stage</th><td>Peat</td><td>Kerogen</td><td>Kerogen</td></tr>
+    <tr><th>Conditions</th><td colspan="3">Buried by sediment · little or no oxygen · incomplete decay · heat and pressure · millions of years</td></tr>
+    <tr><th>Found</th><td>Seams between layers of rock</td><td colspan="2">In porous rock, under a cap rock (a trap)</td></tr>
+  </tbody></table></div><figcaption>What is the same and what is different.</figcaption></figure>`;
+
+/* ===== Walk-through engine ===== */
+const KEY = "igcse-em-fossil-fuels-walkthrough-v1";
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const LET = "ABCD";
+const shuffle = a => { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+const reduceMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+const CHECKS = SECTIONS.flatMap(s => s.checks);
+
+let P = { sec: 0, res: {} };           // saved progress
+try { const raw = localStorage.getItem(KEY); if (raw) P = Object.assign(P, JSON.parse(raw)); } catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} };
+
+/* Balanced answer positions: each letter is correct equally often, never 3 times running. */
+const bags = { main: [], back: [] }, hist = { main: [], back: [] };
+function deal(name, n, allowed) {
+  const bag = bags[name], h = hist[name];
+  const ok = t => t < n && (!allowed || allowed.includes(t)) && !(h.length >= 2 && h[h.length - 1] === t && h[h.length - 2] === t);
+  let k = -1;
+  for (let tries = 0; tries < 3 && k < 0; tries++) { for (let j = bag.length - 1; j >= 0; j--) if (ok(bag[j])) { k = j; break; } if (k < 0) bag.unshift(...shuffle([0, 1, 2, 3])); }
+  const t = k >= 0 ? bag.splice(k, 1)[0] : (allowed ? allowed[0] : 0); h.push(t); return t;
+}
+function orderFor(n, correct, t, fixed) {
+  const idx = [...Array(n).keys()];
+  if (fixed) { const desc = idx.slice().reverse(); if (n - 1 - correct === t) return desc; if (correct === t) return idx; return Math.random() < .5 ? idx : desc; }
+  const rest = shuffle(idx.filter(i => i !== correct)); rest.splice(t, 0, correct); return rest;
+}
+function order(q, bag) { return orderFor(q.o.length, q.a, deal(bag, q.o.length, q.fixed ? [q.a, q.o.length - 1 - q.a] : null), q.fixed); }
+
+/* Live state of the current check */
+let R = null;
+const sectionDone = i => SECTIONS[i].checks.every(c => P.res[c.id]);
+const unlocked = () => { let i = 0; while (i < SECTIONS.length && sectionDone(i)) i++; return i; }; // first unfinished section
+
+function renderChips() {
+  const u = unlocked();
+  $("#chips").innerHTML = SECTIONS.map((s, i) => `<button type="button" data-i="${i}" class="${sectionDone(i) ? "done" : ""}" ${P.sec === i ? 'aria-current="step"' : ""} ${i > u ? "disabled title=\"Finish the earlier sections first\"" : ""}><span class="n">${sectionDone(i) ? "✓" : i + 1}</span>${esc(s.title)}</button>`).join("")
+    + `<button type="button" data-i="end" ${P.sec === "end" ? 'aria-current="step"' : ""} ${u < SECTIONS.length ? "disabled" : ""}><span class="n">★</span>Summary</button>`;
+  $("#chips").querySelectorAll("button").forEach(b => b.addEventListener("click", () => goSection(b.dataset.i === "end" ? "end" : +b.dataset.i)));
+  const cur = $("#chips").querySelector('[aria-current="step"]'); if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest", inline: "nearest" });
+}
+
+function goSection(i) { P.sec = i; save(); R = null; render(); window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }); }
+
+function fillFigs(html) { return html.replace(/\{\{FIG:(\w+)\}\}/g, (m, k) => F[k] ? F[k]() : ""); }
+
+function render() {
+  renderChips();
+  if (P.sec === "end") return renderEnd();
+  if (P.sec > unlocked()) P.sec = unlocked();
+  const s = SECTIONS[P.sec];
+  const done = s.checks.filter(c => P.res[c.id]);
+  const next = s.checks.find(c => !P.res[c.id]);
+  $("#main").innerHTML = `
+    <section class="card"><div class="eyebrow">Section ${P.sec + 1} of ${SECTIONS.length}</div><h2>${esc(s.title)}</h2><div class="notes">${fillFigs(s.teach)}</div></section>
+    <section class="card check" id="checkcard">
+      ${done.length ? `<div class="passed">${done.map(c => `<div><span class="tag ${P.res[c.id]}">${P.res[c.id] === "first" ? "First try" : P.res[c.id] === "help" ? "After help" : "Revisit"}</span><span>${esc(c.q)}</span></div>`).join("")}</div>` : ""}
+      <div id="qzone"></div>
+    </section>`;
+  wireFig();
+  if (next) startCheck(next);
+  else finishSection();
+}
+
+function wireFig() {
+  const fig = $("#inhib-fig"); if (!fig) return;
+  const show = { normal: true, comp: false, nonc: false };
+  const apply = () => { fig.querySelectorAll("[data-curve]").forEach(g => g.classList.toggle("off", !show[g.dataset.curve])); fig.querySelectorAll(".tog").forEach(b => { b.classList.toggle("on", show[b.dataset.show]); b.setAttribute("aria-pressed", show[b.dataset.show]); }); };
+  fig.querySelectorAll(".tog[data-show]").forEach(b => b.addEventListener("click", () => { if (b.dataset.show !== "normal") { show[b.dataset.show] = !show[b.dataset.show]; apply(); } }));
+  apply();
+}
+
+function startCheck(c) {
+  R = { c, phase: "main", bi: 0, first: null, order: order(c, "main"), bOrder: null };
+  drawQ(); clearLog();
+}
+
+function curQ() { return R.phase === "back" ? R.c.b[R.bi] : R.c; }
+function curOrder() { return R.phase === "back" ? R.bOrder : R.order; }
+
+function drawQ() {
+  const c = R.c, s = SECTIONS[P.sec], q = curQ(), ord = curOrder();
+  const idx = s.checks.indexOf(c) + 1;
+  let label, cls = "";
+  if (R.phase === "main") label = `Check ${idx} of ${s.checks.length}`;
+  else if (R.phase === "back") { label = `Back-up question ${R.bi + 1} of ${c.b.length}`; cls = "backup"; }
+  else { label = `Second try · Check ${idx}`; cls = "retry"; }
+  const trail = R.phase === "main" ? "" : `<div class="trail"><b class="done">Check</b>${c.b.map((_, k) => `<i>→</i><b class="${R.phase === "back" && R.bi === k ? "on" : (R.phase === "retry" || R.bi > k ? "done" : "")}">Back-up ${k + 1}</b>`).join("")}<i>→</i><b class="${R.phase === "retry" ? "on" : ""}">Second try</b></div>`;
+  $("#qzone").innerHTML = `
+    <div class="qhead"><span class="stage ${cls}">${label}</span></div>${trail}
+    ${q.fig ? F[q.fig]() : ""}
+    <p class="stem">${esc(q.q)}</p>
+    <div class="opts" id="opts">${ord.map((oi, pos) => `<button type="button" class="opt" data-oi="${oi}" id="opt-${pos}"><span class="k">${LET[pos]}</span><span>${esc(q.o[oi])}</span><span class="mark"></span></button>`).join("")}</div>
+    <div class="log" id="log" aria-live="polite"></div>
+    <div class="actions" id="actions"></div>`;
+  $("#opts").querySelectorAll(".opt").forEach(b => b.addEventListener("click", () => choose(+b.dataset.oi)));
+}
+function clearLog() { const l = $("#log"); if (l) l.innerHTML = ""; }
+function letter(oi) { return LET[curOrder().indexOf(oi)]; }
+function lock(chosen, correct, reveal) {
+  $("#opts").querySelectorAll(".opt").forEach(b => {
+    const oi = +b.dataset.oi; b.disabled = true;
+    if (oi === chosen && chosen === correct) { b.classList.add("right"); b.querySelector(".mark").textContent = "Correct"; }
+    else if (oi === chosen) { b.classList.add("wrong"); b.querySelector(".mark").textContent = "Your answer"; }
+    else if (oi === correct && reveal) { b.classList.add("right"); b.querySelector(".mark").textContent = "Answer"; }
+    else b.classList.add("dim");
+  });
+}
+function msg(kind, title, text) {
+  const d = document.createElement("div"); d.className = "msg " + kind;
+  d.innerHTML = (title ? `<h3>${esc(title)}</h3>` : "") + `<p>${esc(text)}</p>`;
+  $("#log").appendChild(d);
+}
+function actions(list) {
+  const a = $("#actions"); a.innerHTML = "";
+  list.forEach((it, k) => { const b = document.createElement("button"); b.type = "button"; b.className = "btn" + (it.ghost ? " ghost" : ""); b.textContent = it.label; b.addEventListener("click", it.go); a.appendChild(b); if (k === 0) setTimeout(() => { b.focus({ preventScroll: true }); b.scrollIntoView({ block: "nearest", behavior: reduceMotion ? "auto" : "smooth" }); }, 0); });
+}
+
+function choose(oi) {
+  const c = R.c, q = curQ();
+  if (R.phase === "back") {
+    const ok = oi === q.a; lock(oi, q.a, true);
+    msg(ok ? "good" : "bad", ok ? "Correct" : `The answer is ${letter(q.a)}`, q.x);
+    const last = R.bi === c.b.length - 1;
+    actions([{ label: last ? "Try the check question again" : "Next back-up question", go: () => {
+      if (last) { R.phase = "retry"; const was = R.order.indexOf(c.a); if (c.fixed) { const f = R.order.slice().reverse(); if (f.indexOf(c.a) !== was) R.order = f; } else { const t = shuffle([0, 1, 2, 3].filter(p => p !== was))[0]; R.order = orderFor(4, c.a, t, false); } drawQ(); msg("hint", "Second try", "The options are in a new order, so read them carefully."); }
+      else { R.bi++; R.bOrder = order(c.b[R.bi], "back"); drawQ(); }
+      focusFirst();
+    } }]);
+    return;
+  }
+  const ok = oi === c.a;
+  if (R.phase === "main") {
+    if (ok) { lock(oi, c.a, false); msg("good", "Correct", c.x); record("first"); }
+    else {
+      lock(oi, c.a, false); R.first = oi;
+      msg("bad", `Not quite: ${letter(oi)} isn't right`, c.w[oi] || "That isn't the right answer.");
+      msg("hint", "Let's check the basics", `Answer ${c.b.length} short back-up questions, then try this one again. Re-read the notes above if you need to.`);
+      actions([{ label: "Start the back-up questions", go: () => { R.phase = "back"; R.bi = 0; R.bOrder = order(c.b[0], "back"); drawQ(); focusFirst(); } }]);
+    }
+    return;
+  }
+  lock(oi, c.a, true);
+  if (ok) { msg("good", "Got it on the second try", c.x); record("help"); }
+  else { msg("bad", `Not this time. The answer is ${letter(c.a)}`, (c.w[oi] ? c.w[oi] + " " : "") + c.x); record("miss"); }
+}
+function focusFirst() { const b = $("#opt-0"); if (b) { b.focus({ preventScroll: true }); $("#qzone").scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" }); } }
+
+function record(result) {
+  P.res[R.c.id] = result; save(); renderChips();
+  const s = SECTIONS[P.sec], next = s.checks.find(c => !P.res[c.id]);
+  if (next) actions([{ label: "Next check question", go: () => { render(); setTimeout(() => $("#checkcard").scrollIntoView({ block: "start", behavior: reduceMotion ? "auto" : "smooth" }), 0); } }]);
+  else actions(sectionNav());
+}
+function sectionNav() {
+  const last = P.sec === SECTIONS.length - 1;
+  return [{ label: last ? "See your summary" : `Next section: ${SECTIONS[P.sec + 1].title}`, go: () => goSection(last ? "end" : P.sec + 1) }];
+}
+function finishSection() {
+  const s = SECTIONS[P.sec];
+  $("#qzone").innerHTML = `<p>You've finished this section's checks.</p><div class="actions" id="actions"></div>`;
+  const a = sectionNav().concat([{ label: "Redo this section's questions", ghost: true, go: () => { s.checks.forEach(c => delete P.res[c.id]); save(); render(); } }]);
+  const box = $("#actions");
+  a.forEach(it => { const b = document.createElement("button"); b.type = "button"; b.className = "btn" + (it.ghost ? " ghost" : ""); b.textContent = it.label; b.addEventListener("click", it.go); box.appendChild(b); });
+}
+
+function renderEnd() {
+  const n = CHECKS.length, c = { first: 0, help: 0, miss: 0 };
+  CHECKS.forEach(k => { if (P.res[k.id]) c[P.res[k.id]]++; });
+  const pts = c.first + c.help * 0.5;
+  const fmt = v => (v % 1 ? Math.floor(v) + "½" : String(v));
+  $("#main").innerHTML = `
+    <section class="card"><div class="eyebrow">Summary</div>
+      <div class="big">${fmt(pts)}<small> / ${n} checks</small></div>
+      <p>${c.first} right first time · ${c.help} right after the back-up questions · ${c.miss} to revisit</p>
+      <div class="secs">${SECTIONS.map((s, i) => { const r = s.checks.map(k => P.res[k.id]); const worst = r.includes("miss") ? "miss" : r.includes("help") ? "help" : "first";
+        return `<div class="row"><span><span class="tag ${worst}">${worst === "first" ? "Secure" : worst === "help" ? "Getting there" : "Revisit"}</span> ${esc(s.title)}</span><button type="button" class="linkbtn" data-go="${i}">Go to section</button></div>`; }).join("")}</div>
+    </section>
+    <section class="card"><h2>Key points</h2><ol class="keys">${SUMMARY.map(t => `<li>${esc(t)}</li>`).join("")}</ol>
+      <div class="actions"><button type="button" class="btn ghost" id="restart">Start again from the beginning</button><span id="confirm" class="note"></span></div></section>`;
+  $("#main").querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => goSection(+b.dataset.go)));
+  let armed = false;
+  $("#restart").addEventListener("click", () => {
+    if (!armed) { armed = true; $("#confirm").textContent = "This clears your answers. Click again to confirm."; setTimeout(() => { armed = false; const el = $("#confirm"); if (el) el.textContent = ""; }, 5000); return; }
+    P = { sec: 0, res: {} }; save(); goSection(0);
+  });
+}
+
+document.addEventListener("keydown", e => {
+  if (e.metaKey || e.ctrlKey || e.altKey || !R) return;
+  const i = "ABCD".indexOf(e.key.toUpperCase()); const j = i >= 0 ? i : "1234".indexOf(e.key);
+  if (j >= 0 && e.key.length === 1) { const b = $("#opt-" + j); if (b && !b.disabled) { e.preventDefault(); b.click(); } }
+});
+
+render();
+
+</script>
+</body>
+</html>
